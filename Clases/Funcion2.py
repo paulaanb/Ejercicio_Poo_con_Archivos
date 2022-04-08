@@ -22,4 +22,12 @@ def nota_final_alumno(calificaciones):
             parcial2= nota(alumno['Parcial2'])
         else:
             parcial2= 0
+        #Practicas
+        if alumno['OrdinarioPracticas']:
+            practicas= nota(alumno['OrdinarioPracticas'])
+        elif alumno['Practicas']:
+            practicas= nota(alumno['Practicas']):
+        else:
+            practicas= 0
+        
         
