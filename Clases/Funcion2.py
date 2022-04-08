@@ -30,4 +30,10 @@ def nota_final_alumno(calificaciones):
         else:
             practicas= 0
         
-        
+       #Establecemos la relacion del examen con el nombre adquirido y los porcentajes de cada examen, o practica, en su defecto
+       
+        alumno['Final1'] = parcial1
+        alumno['Final2'] = parcial2
+        alumno['FinalPracticas'] = practicas
+        alumno['NotaFinal'] = parcial1*0.3 + parcial2*0.3 + practicas*0.4
+        return alumno
