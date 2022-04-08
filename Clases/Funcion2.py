@@ -15,4 +15,11 @@ def nota_final_alumno(calificaciones):
             parcial1= nota(alumno['Parcial1'])
         else:
             parcial1= 0
-       
+       #Segundo ordinario y parcial
+       if alumno['Ordinario2']:
+           parcial2= nota(alumno['Ordinario2'])
+        elif alumno['Parcial2']:
+            parcial2= nota(alumno['Parcial2'])
+        else:
+            parcial2= 0
+        
