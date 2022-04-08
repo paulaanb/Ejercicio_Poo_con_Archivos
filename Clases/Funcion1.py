@@ -5,3 +5,4 @@
 
 def nota(numero):
     numero = numero.replace(',', '.') #Con esto lo que hacemos es cambiar la coma que separa el numero entero de los decimales por un punto.
+    return float(numero)
