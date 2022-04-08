@@ -85,3 +85,23 @@ Una función que reciba una lista de diccionarios como la que devuelve la funci�
         return list(map(nota_final, calificaciones))
 # Funcion 3
 Una función que reciba una lista de diccionarios como la que devuelve la función anterior y devuelva dos listas, una con los alumnos aprobados y otra con los alumnos suspensos. Para aprobar el curso, la asistencia tiene que ser mayor o igual que el 75%, la nota de los exámenes parciales y de prácticas mayor o igual que 4 y la nota final mayor o igual que 5.
+
+    from Funcion1 import Funcion1
+    from Funcion2 import Funcion2
+
+    #Definimos una funcion que nos indique los alumnos que estan aprobados y los que estan suspensos en forma de lista.
+    def alumnos_aprobados_suspensos(calificaciones):
+        aprobados= []
+        suspensos= []
+        for alumno in calificaciones:
+            if all([int(alumno['Asistencia'][:-1]) >= 75, alumno['Final1'] >= 4, alumno['FinalPracticas'] >=4, alumno['NotaFinal'] >=5):
+                aprobados.append(alumno['Apellidos'] + ' , ' + alumno['Nombre'])
+            else:
+                suspensos.append(alumno['Apellidos'] + ' , ' + alumno['Nombre'])
+            return aprobados, suspensos
+
+    #Ejecutamos el codigo de cada funcion
+    print(nota_final_alumno(calificaciones('calificaciones.csv')))
+    aprobados, suspensos = alumnos_aprobados_suspensos(nota_final_alumno(calificaciones('calificaciones.csv')))
+    print('La lista de los alumnos aprobados es la siguiente: /n', aprobados)
+    print('La lista de los alumnos suspensos es la siguiente: /n', suspensos)
