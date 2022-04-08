@@ -14,4 +14,9 @@ def alumnos_aprobados_suspensos(calificaciones):
         else:
             suspensos.append(alumno['Apellidos'] + ' , ' + alumno['Nombre'])
         return aprobados, suspensos
-    
+
+#Ejecutamos el codigo de cada funcion
+print(nota_final_alumno(calificaciones('calificaciones.csv')))
+aprobados, suspensos = alumnos_aprobados_suspensos(nota_final_alumno(calificaciones('calificaciones.csv')))
+print('La lista de los alumnos aprobados es la siguiente: /n', aprobados)
+print('La lista de los alumnos suspensos es la siguiente: /n', suspensos)
