@@ -31,9 +31,12 @@ def nota_final_alumno(calificaciones):
             practicas= 0
         
        #Establecemos la relacion del examen con el nombre adquirido y los porcentajes de cada examen, o practica, en su defecto
-       
+
         alumno['Final1'] = parcial1
         alumno['Final2'] = parcial2
         alumno['FinalPracticas'] = practicas
         alumno['NotaFinal'] = parcial1*0.3 + parcial2*0.3 + practicas*0.4
         return alumno
+    
+    #Devolvemos la funcion definida arriba a todos los alumnos para que aparezcan sus calificaciones
+    return list(map(nota_final, calificaciones))
